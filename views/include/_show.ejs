@@ -12,7 +12,7 @@
         <td><%= users[i].liability %></td>
         <td><%= users[i].remark %></td>
         <td class="mytd">
-            <a href="/update-user" class="btn border-shadow update">
+            <a href="/update-user?id=<%= users[i]._id %>" class="btn border-shadow update">
                 <span class="text-gradient">
                     <i class='fas fa-pencil-alt'></i>
                 </span>
