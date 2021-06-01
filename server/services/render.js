@@ -1,0 +1,9 @@
+exports.homeRoutes=(req,res)=>{
+    res.render('index.ejs');
+}
+exports.addRoutes=(req,res)=>{
+    res.render('add_user.ejs');
+}
+exports.updateRoutes=(req,res)=>{
+    res.render('update_user.ejs');
+}
