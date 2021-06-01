@@ -8,7 +8,7 @@ const bodyparser = require('body-parser');
 const connectDB = require('./server/database/connection');
 dotenv.config({path:'.env'})
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 // Log Request
 app.use(morgan('tiny'))
 // Pass request to body parser
