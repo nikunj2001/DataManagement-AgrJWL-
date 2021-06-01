@@ -19,11 +19,26 @@ exports.create=(req,res)=>{
     user.save(user)
     .then(data=>{
         res.send(data)
+        res.redirect('/add-user')
     }).catch(err=>{
         res.status(500).send({message:err.message||'Some error occured while entering data'})
     })
 }
 exports.find=(req,res)=>{
+    if(req.query.id){
+        const id = req.query.id;
+        Userdb.findById(id).then(data=>{
+            if(!data){
+                res.status(404).send({message:"Noy found user with id"+id})
+            }else{
+                res.send(data);
+            }
+        }).catch(err=>{
+            res.status(500).send({message:"Error returiving user with id"+id})
+        })
+    }else{
+
+    }
     Userdb.find().then(user=>{
         res.send(user)
     }).catch(err=>{
@@ -47,5 +62,17 @@ exports.update=(req,res)=>{
     })
 }
 exports.delete=(req,res)=>{
+    const id = req.params.id;
+    Userdb.findByIdAndDelete(id).then(data=>{
+        if(!data){
+            res.status(404).sned({message:"Cannot delete the slected data.Maybe id is wrong"})
+        }else{
+            res.send({
+                message:"User Deleted"
+            })
+        }
 
+    }).catch(err=>{
+        res.status(500).send({message:"Could not delete user with given id"})
+    })
 }

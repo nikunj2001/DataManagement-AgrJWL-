@@ -1,4 +1,4 @@
-<form id="add_user" method="POST">
+<form id="add_user" action="/api/users" method="POST">
     <div class="new_user">
         <div class="form-group">
             <label for="name" class="text-light">Name</label>
@@ -15,23 +15,23 @@
         </div>
         <div class="form-group">
             <label for="debit" class="text-light">Debit</label>
-            <input type="text" name="debit" value="" placeholder="0000">
+            <input type="text" name="debit" value="" placeholder="0">
         </div>
         <div class="form-group">
             <label for="credit" class="text-light">credit</label>
-            <input type="text" name="credit" value="" placeholder="0000">
+            <input type="text" name="credit" value="" placeholder="0">
         </div>
         <div class="form-group">
             <label for="advance" class="text-light">Advance</label>
-            <input type="text" name="advance" value="" placeholder="0000">
+            <input type="text" name="advance" value="" placeholder="0">
         </div>
         <div class="form-group">
             <label for="Loan" class="text-light">Loan</label>
-            <input type="text" name="loan" value="" placeholder="0000">
+            <input type="text" name="loan" value="" placeholder="0">
         </div>
         <div class="form-group">
             <label for="liability" class="text-light">Liability</label>
-            <input type="text" name="liability" value="" placeholder="0000">
+            <input type="text" name="liability" value="" placeholder="0">
         </div>
         <div class="form-group">
             <label for="remark" class="text-light">Remark</label>
